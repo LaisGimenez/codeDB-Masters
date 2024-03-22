@@ -1,6 +1,7 @@
 public class ExcursionesConstructor {
     //Atributos
 
+    //Hola Guillem
     //Hola
     private ExcursionesModelo modeloEX;
     private ExcursionesVista vistaEx;
