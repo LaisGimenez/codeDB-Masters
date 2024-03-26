@@ -1,3 +1,7 @@
+package codeDB_masters.vista;
+
+import codeDB_masters.vista.SociosVista;
+
 public class SociosContructor {
     //Atributos
     SociosModelo modeloSoc;
