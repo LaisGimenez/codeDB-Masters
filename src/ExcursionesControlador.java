@@ -14,7 +14,7 @@ public class ExcursionesControlador {
         this.excursiones = new ArrayList<>();
     }
 
-    //Menú interno para seleccionar qué método se ejecutará una vez la vista haya pedido al usuario que seleccione una opción
+    //Menú interno para seleccionar qué método se ejecutará una vez la vista haya pedido al usuario que seleccione una opción.
     public void iniciar(){
         int opcion;
         do {
