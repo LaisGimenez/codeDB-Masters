@@ -1,3 +1,5 @@
+package codeDB_masters.modelo;
+
 public class SeguroBasicoModelo extends SeguroModelo {
     //Atributos
     String tipo;

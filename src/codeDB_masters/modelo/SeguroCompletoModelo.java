@@ -1,4 +1,6 @@
-public class SeguroCompletoModelo extends  SeguroModelo{
+package codeDB_masters.modelo;
+
+public class SeguroCompletoModelo extends SeguroModelo {
     //Atributos
     String tipo;
     double precio;

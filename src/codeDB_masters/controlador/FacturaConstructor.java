@@ -1,3 +1,7 @@
+package codeDB_masters.controlador;
+
+import codeDB_masters.modelo.FacturaModelo;
+
 public class FacturaConstructor {
     //Atributos
 

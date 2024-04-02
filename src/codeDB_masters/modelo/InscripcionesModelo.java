@@ -1,3 +1,7 @@
+package codeDB_masters.modelo;
+
+import codeDB_masters.modelo.ExcursionesModelo;
+
 public class InscripcionesModelo {
     //Atributos
     int n_inscripcion;

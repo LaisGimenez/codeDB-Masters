@@ -1,3 +1,8 @@
+package codeDB_masters.modelo;
+
+import codeDB_masters.modelo.SeguroModelo;
+import codeDB_masters.modelo.SociosModelo;
+
 public class SocioEstandarModelo extends SociosModelo {
     //Atributos
     String nif;

@@ -1,3 +1,8 @@
+package codeDB_masters.modelo;
+
+import codeDB_masters.modelo.FederacionesModelo;
+import codeDB_masters.modelo.SociosModelo;
+
 public class SociosFederadosModelo extends SociosModelo {
     //Atributos
     String nif;

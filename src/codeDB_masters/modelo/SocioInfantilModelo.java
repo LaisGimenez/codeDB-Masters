@@ -1,4 +1,8 @@
-public class SocioInfantilModelo extends SociosModelo{
+package codeDB_masters.modelo;
+
+import codeDB_masters.modelo.SociosModelo;
+
+public class SocioInfantilModelo extends SociosModelo {
     //Atributos
     SociosModelo n_socioPadreMadre;
     int descuento_cuota;

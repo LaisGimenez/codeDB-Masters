@@ -1,3 +1,7 @@
+package codeDB_masters.modelo;
+
+import codeDB_masters.modelo.SociosModelo;
+
 import java.time.LocalDate;
 
 public class FacturaModelo {

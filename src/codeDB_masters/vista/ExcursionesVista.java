@@ -1,3 +1,7 @@
+package codeDB_masters.vista;
+
+import codeDB_masters.modelo.ExcursionesModelo;
+
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -36,7 +40,7 @@ public class ExcursionesVista {
         scanner.nextLine();
         System.out.println("Introduzca el precio de la excursión:");
         double precio = scanner.nextDouble();
-        //La misma vista devuelve un nuevo objeto de tipo ExcursionesModelo y le añade los parámetros para que el constructor lo añada posteriormente al arraylist.
+        //La misma vista devuelve un nuevo objeto de tipo codeDB_masters.modelo.ExcursionesModelo y le añade los parámetros para que el constructor lo añada posteriormente al arraylist.
         return new ExcursionesModelo(codigo, descripcion, fecha, nDias, precio);
     }
 

@@ -1,3 +1,5 @@
+package codeDB_masters.modelo;
+
 import java.time.LocalDate;
 
 public class ExcursionesModelo {

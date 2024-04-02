@@ -1,15 +1,15 @@
-package codeDB_masters.vista;
+package codeDB_masters.controlador;
 
 import codeDB_masters.vista.SociosVista;
 
-public class SociosContructor {
+public class SociosControlador {
     //Atributos
     SociosModelo modeloSoc;
     SociosVista vistaSoc;
 
     //Constructor
 
-    public SociosContructor(SociosModelo modeloSoc, SociosVista vistaSoc) {
+    public SociosControlador(SociosModelo modeloSoc, SociosVista vistaSoc) {
         this.modeloSoc = modeloSoc;
         this.vistaSoc = vistaSoc;
     }

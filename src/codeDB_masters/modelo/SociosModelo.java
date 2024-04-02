@@ -1,3 +1,5 @@
+package codeDB_masters.modelo;
+
 public class SociosModelo {
     //Atributos
     int n_socio;
