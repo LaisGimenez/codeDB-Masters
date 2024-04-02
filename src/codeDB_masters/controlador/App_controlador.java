@@ -1,4 +1,4 @@
 package codeDB_masters.controlador;
 
-public class Controlador {
+public class App_controlador {
 }
