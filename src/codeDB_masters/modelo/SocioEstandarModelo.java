@@ -10,7 +10,7 @@ public class SocioEstandarModelo extends SociosModelo {
 
     //Constructor
 
-    public SocioEstandarModelo(int n_socio, String nombre, String nif, SeguroModelo seguro) {
+    public SocioEstandarModelo(String n_socio, String nombre, String nif, SeguroModelo seguro) {
         super(n_socio, nombre);
         this.nif = nif;
         this.seguro = seguro;

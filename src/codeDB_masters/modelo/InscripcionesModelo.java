@@ -1,44 +1,48 @@
 package codeDB_masters.modelo;
 
 import codeDB_masters.modelo.ExcursionesModelo;
+import codeDB_masters.vista.InscripcionesVista;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class InscripcionesModelo {
-    //Atributos
-    int n_inscripcion;
-    SociosModelo socio;
-    ExcursionesModelo excursion;
+    private List<InscripcionesModelo> inscripciones;
 
-    //Constructor
-
-    public InscripcionesModelo(int n_inscripcion, SociosModelo socio, ExcursionesModelo excursion) {
-        this.n_inscripcion = n_inscripcion;
-        this.socio = socio;
-        this.excursion = excursion;
+    // Constructor
+    public InscripcionesModelo() {
+        this.inscripciones = new ArrayList<>();
     }
 
-    //Getters y Setters
-
-    public int getN_inscripcion() {
-        return n_inscripcion;
+    // Método para agregar una nueva inscripción
+    public void agregarInscripcion(InscripcionesModelo inscripcion) {
+        this.inscripciones.add(inscripcion);
     }
 
-    public void setN_inscripcion(int n_inscripcion) {
-        this.n_inscripcion = n_inscripcion;
+    // Método para eliminar una inscripción
+    public boolean eliminarInscripcion(InscripcionesModelo inscripcion) {
+        return this.inscripciones.remove(inscripcion);
     }
 
-    public SociosModelo getSocio() {
-        return socio;
+    // Método para mostrar inscripciones filtradas por fechas y/o socios
+    public List<InscripcionesModelo> mostrarInscripcionesFiltradas(Date fechaInicio, Date fechaFin, String numeroSocio) {
+        List<InscripcionesModelo> inscripcionesFiltradas = new ArrayList<>();
+        for (InscripcionesModelo inscripcion : inscripciones) {
+            // Filtrar por fecha
+            if (fechaInicio != null && fechaFin != null) {
+                if (!inscripcion.getFechaExcursion().before(fechaInicio) && !inscripcion.getFechaExcursion().after(fechaFin)) {
+                    continue;
+                }
+            }
+            // Filtrar por número de socio
+            if (numeroSocio != null && !numeroSocio.isEmpty()) {
+                if (!inscripcion.getn_socio().equals(numeroSocio)) {
+                    continue;
+                }
+            }
+            inscripcionesFiltradas.add(inscripcion);
+        }
+        return inscripcionesFiltradas;
     }
 
-    public void setSocio(SociosModelo socio) {
-        this.socio = socio;
-    }
-
-    public ExcursionesModelo getExcursion() {
-        return excursion;
-    }
-
-    public void setExcursion(ExcursionesModelo excursion) {
-        this.excursion = excursion;
-    }
 }

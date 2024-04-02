@@ -3,7 +3,7 @@ package codeDB_masters.controlador;
 import codeDB_masters.modelo.ExcursionesModelo;
 import codeDB_masters.vista.ExcursionesVista;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.ArrayList;
 
 public class ExcursionesControlador {
@@ -56,14 +56,14 @@ public class ExcursionesControlador {
     //Iteramos sobre los objetos del arraylist para comprobar su fecha, si se encuentra entre las dos fechas facilitadas,
     // se imprimen por pantalla gracias a la función mostrarExcursion de la vista.
     public void mostrarExcursionesFiltradas(){
-        LocalDate[] fechas = vistaEx.ExcursionesFechasFiltro();
-        LocalDate fechaInicio = fechas[0];
-        LocalDate fechaFinal = fechas[1];
+        Date[] fechas = vistaEx.ExcursionesFechasFiltro();  //ANTES ERA LOCALDATE, AHORA ES DATE, HAY QUE AJUSTARLO
+        Date fechaInicio = fechas[0];
+        Date fechaFinal = fechas[1];
 
         vistaEx.mostrarMensaje("Excursiones entre " + fechaInicio + " y " + fechaFinal + ":");
         //Quizás prodía hacerse mas sencillo utilizando isEqual, isAfter, isBefore, lo probaré.
         for (ExcursionesModelo excursion : excursiones) {
-            LocalDate fechaExcursion = excursion.getFecha();
+            Date fechaExcursion = excursion.getFecha();
             if ((fechaExcursion.compareTo(fechaInicio) >= 0 && fechaExcursion.compareTo(fechaFinal) <= 0)) {
                 vistaEx.mostrarExcursion(excursion);
             }

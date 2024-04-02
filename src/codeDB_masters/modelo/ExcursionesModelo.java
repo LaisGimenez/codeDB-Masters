@@ -1,18 +1,18 @@
 package codeDB_masters.modelo;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class ExcursionesModelo {
 
     // atributos
     public String codigo;
     public String descripcion;
-    public LocalDate fecha;
+    public Date fecha;
     public int n_dias;
     public double precio;
 
     //constructor
-    public ExcursionesModelo(String codigo, String descripcion, LocalDate fecha, int n_dias, double precio) {
+    public ExcursionesModelo(String codigo, String descripcion, Date fecha, int n_dias, double precio) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.fecha = fecha;
@@ -37,11 +37,11 @@ public class ExcursionesModelo {
         this.descripcion = descripcion;
     }
 
-    public LocalDate getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 

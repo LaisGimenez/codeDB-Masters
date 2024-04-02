@@ -1,9 +1,11 @@
 package codeDB_masters.controlador;
 
-<<<<<<< HEAD
+
 //importamos librerías
 
+import codeDB_masters.modelo.CargarDatos;
 import codeDB_masters.modelo.Datos;
+import codeDB_masters.modelo.CargarDatos;
 import codeDB_masters.vista.AppmenuVista;
 
 public class App_controlador {
@@ -13,7 +15,7 @@ public class App_controlador {
 
     public static void DatosControlador(Datos BBDD) {
 
-        Datos cargardatos = new Datos();
+        CargarDatos cargardatos = new CargarDatos();
         cargardatos.cargardatos(BBDD);  //HABRÍA QUE CREAR EL MÉTODO CARGAR DATOS EN LA CLASE DATOS
     }
 
@@ -111,7 +113,4 @@ public class App_controlador {
                 break;
         }
     }
-=======
-public class App_controlador {
->>>>>>> origin/main
 }
