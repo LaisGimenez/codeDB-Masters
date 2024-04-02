@@ -1,5 +1,6 @@
 package codeDB_masters.controlador;
 
+<<<<<<< HEAD
 //importamos librerías
 
 import codeDB_masters.modelo.Datos;
@@ -109,4 +110,7 @@ public class App_controlador {
                 break;
         }
     }
+=======
+public class App_controlador {
+>>>>>>> origin/main
 }
