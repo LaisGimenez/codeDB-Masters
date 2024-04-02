@@ -1,5 +1,6 @@
 package codeDB_masters.controlador;
 
+<<<<<<< HEAD
 //importamos librerías
 
 import codeDB_masters.modelo.Datos;
@@ -45,15 +46,16 @@ public class App_controlador {
     //MÉTODOS CONTROL PARA EXCURSIONES
 
     public static void gestionExcursiones(Datos BBDD) {
+        ExcursionesControlador excursionescontrolador = new ExcursionesControlador();
 
         View.menuGestionExcursionesVista();
         int opcion = View.getOpcionVista(3);
         switch (opcion) {
             case 1:
-                ExcursionesControlador.agregarExcursion(BBDD);
+                excursionescontrolador.agregarExcursion(BBDD); //BBDD  tendrá que ser una instancia de la clase Datos
                 break;
             case 2:
-                ExcursionesControlador.mostrarExcursionesFiltradas(BBDD);
+                excursionescontrolador.mostrarExcursionesFiltradas(BBDD);
                 break;
             case 3:
                 inicio(BBDD);
@@ -109,4 +111,7 @@ public class App_controlador {
                 break;
         }
     }
+=======
+public class App_controlador {
+>>>>>>> origin/main
 }
