@@ -93,24 +93,28 @@ public class App_controlador {
         }
     }
 
-    //MÉTODOS CONTROL PARA INSCRIPCIONES
+    //MÉTODOS CONTROL PARA INSCRIPCIONES. Lo hacemos de la siguiente manera porque los métodos de instancia
+    //no pueden ser llamados en un contexto estático
 
     public static void gestionInscripciones(Datos BBDD) {
+        InscripcionesControlador inscripcionesControlador = new InscripcionesControlador();
 
         View.menuGestionInscripcionesVista();
         int opcion = View.getOpcionVista(4);
         switch (opcion) {
             case 1:
-                InscripcionesControlador.agregarInscripcion(BBDD);  //CREAR MÉTODO agregarInscripcion
+                inscripcionesControlador.agregarInscripcion();  // Método de instancia
                 break;
             case 2:
-                InscripcionesControlador.mostrarInscripcion(BBDD);  //CREAR MÉTODO mostrarInscripcion
+                inscripcionesControlador.mostrarInscripcion();  // Método de instancia
                 break;
             case 3:
-                InscripcionesControlador.eliminarInscripcion(BBDD); //CREAR MÉTODO eliminarInscripcion
+                inscripcionesControlador.eliminarInscripcion();  // Método de instancia
+                break;
             case 4:
                 inicio(BBDD);
                 break;
         }
     }
+
 }

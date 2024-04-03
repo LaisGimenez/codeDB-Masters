@@ -1,50 +1,74 @@
 package codeDB_masters.vista;
 
+import codeDB_masters.modelo.InscripcionesModelo;
+
 import java.util.Scanner;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class InscripcionesVista {
 
     private Scanner scanner;
 
     public InscripcionesVista() {
-        scanner = new Scanner(System.in);
+        this.scanner = new Scanner(System.in);
     }
 
-    public class DatosInscripcion {
-        private String n_socio;
-        private String nombre;
-        private Date fechaExcursion;
-        private String descripcion;
-        private double importe;
+    // Método para mostrar el menú de gestión de inscripciones
+    public int menuGestionInscripcionesVista() {
+        System.out.println("--GESTIÓN INSCRIPCIONES--");
+        System.out.println("1. Añadir Inscripción");
+        System.out.println("2. Mostrar Inscripciones con filtro por fecha y/o socios");
+        System.out.println("3. Eliminar Inscripción");
+        System.out.println("4. Volver al menú principal");
+        System.out.println("Seleccione una opción (1-4): ");
+        return scanner.nextInt();
+    }
 
-        public DatosInscripcion(String n_socio, String nombre, Date fechaExcursion, String descripcion, double importe) {
-            this.n_socio = n_socio;
-            this.nombre = nombre;
-            this.fechaExcursion = fechaExcursion;
-            this.descripcion = descripcion;
-            this.importe = importe;
-        }
+    // Método para solicitar datos de una inscripción al usuario
+    public InscripcionesModelo datosInscripcion() {
+        System.out.println("Añadiendo inscripción...");
+        System.out.println("Introduzca el número de socio:");
+        String nSocio = scanner.next();
+        scanner.nextLine();
+        System.out.println("Introduzca el nombre:");
+        String nombre = scanner.nextLine();
+        System.out.println("Introduzca la fecha de la excursión (YYYY-MM-DD):");
+        LocalDate fechaExcursion = LocalDate.parse(scanner.next());
+        scanner.nextLine();
+        System.out.println("Introduzca la descripción:");
+        String descripcion = scanner.nextLine();
+        System.out.println("Introduzca el importe:");
+        double importe = scanner.nextDouble();
+        scanner.nextLine();
+        return new InscripcionesModelo(nSocio, nombre, fechaExcursion, descripcion, importe);
+    }
 
-        public String getn_socio() {
-            return n_socio;
-        }
+    // Método para solicitar fechas para filtrar inscripciones
+    public LocalDate[] fechasFiltroInscripciones() {
+        LocalDate[] fechas = new LocalDate[2];
+        System.out.println("Mostrar Inscripciones con filtro por fecha");
+        System.out.println("Introduzca la fecha de inicio (YYYY-MM-DD):");
+        fechas[0] = LocalDate.parse(scanner.next());
+        scanner.nextLine();
+        System.out.println("Introduzca la fecha de fin (YYYY-MM-DD):");
+        fechas[1] = LocalDate.parse(scanner.next());
+        scanner.nextLine();
+        return fechas;
+    }
 
-        public String getNombre() {
-            return nombre;
-        }
+    // Método para mostrar una inscripción
+    public void mostrarInscripcion(InscripcionesModelo inscripcion) {
+        System.out.println("---------------");
+        System.out.println("Número de Socio: " + inscripcion.getNSocio());
+        System.out.println("Nombre: " + inscripcion.getNombre());
+        System.out.println("Fecha de Excursión: " + inscripcion.getFechaExcursion());
+        System.out.println("Descripción: " + inscripcion.getDescripcion());
+        System.out.println("Importe: " + inscripcion.getImporte());
+        System.out.println("---------------");
+    }
 
-        public Date getFechaExcursion() {
-            return fechaExcursion;
-        }
-
-        public String getDescripcion() {
-            return descripcion;
-        }
-
-        public double getImporte() {
-            return importe;
-        }
+    // Método para mostrar un mensaje
+    public void mostrarMensaje(String mensaje) {
+        System.out.println(mensaje);
     }
 }
-
